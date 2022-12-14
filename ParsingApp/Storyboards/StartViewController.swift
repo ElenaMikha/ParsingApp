@@ -12,14 +12,14 @@ class StartViewController: UIViewController {
     
     
     @IBAction func startButton() {
-      startData()
+      getData()
     }
     
     
 }
 extension StartViewController {
     
-    private func startData() {
+    private func getData() {
         guard let url = URL(string: "https://api.agify.io/?name=bella") else { return }
         
         URLSession.shared.dataTask(with: url) { data, _, error in
