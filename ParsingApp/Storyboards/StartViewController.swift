@@ -9,10 +9,8 @@ import UIKit
 
 class StartViewController: UIViewController {
     
-    
-    
     @IBAction func startButton() {
-      getData()
+        getData()
     }
     
     
