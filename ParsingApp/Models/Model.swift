@@ -6,7 +6,7 @@
 //
 
 
-struct Data: Decodable {
+struct PersonData: Decodable {
     let age: Int
     let count: Int
     let name: String

@@ -8,17 +8,16 @@
 import UIKit
 
 class StartViewController: UIViewController {
+    let dataUrl = "https://api.agify.io/?name=bella"
     
     @IBAction func startButton() {
         getData()
     }
-    
-    
 }
 extension StartViewController {
     
     private func getData() {
-        guard let url = URL(string: "https://api.agify.io/?name=bella") else { return }
+        guard let url = URL(string: dataUrl) else { return }
         
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data else {
@@ -27,7 +26,7 @@ extension StartViewController {
             }
             
             do {
-                let data = try JSONDecoder().decode(Data.self, from: data)
+                let data = try JSONDecoder().decode(PersonData.self, from: data)
                 print(data)
                 
             } catch let error {
